@@ -8,6 +8,9 @@ from resources.item import Item, ItemList, items_ns, item_ns
 from marshmallow import ValidationError
 
 app = Flask(__name__)
+@app.route('/')
+def home():
+    return "<h1>DevOps Project - System Operational</h1><p>Container ID: Running on Docker</p>"
 bluePrint = Blueprint('api', __name__, url_prefix='/api')
 api = Api(bluePrint, doc='/doc', title='Sample Flask-RestPlus Application')
 app.register_blueprint(bluePrint)
